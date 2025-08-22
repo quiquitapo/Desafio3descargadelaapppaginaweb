@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Guía Digital para Adultos Mayores</title> <!-- Hola personita que revisa mi maravilla de código -->
+  <title>Guía Digital para Adultos Mayores</title>
   <style>
     img {
-    max-width: 100%;
-    height: auto;
-}
+        max-width: 100%;
+        height: auto;
+    }
     body {
       background-color: black;
       color: white;
@@ -47,20 +47,27 @@
       text-align: left;
       display: none;
     }
-    #speakBtn {
+    #speakBtn, #helpBtn {
       margin-top: 10px;
       font-size: 16px;
       padding: 10px 20px;
-      background-color: #555;
       border: none;
       color: white;
       border-radius: 8px;
       cursor: pointer;
       display: none;
     }
-    #speakBtn:hover {
-      background-color: #777;
+    #speakBtn { background-color: #555; }
+    #speakBtn:hover { background-color: #777; }
+
+    #helpBtn { background-color: red; }
+    #helpBtn:hover { background-color: darkred; }
+
+    #helpOptions {
+      display: none;
+      margin-top: 10px;
     }
+
     .inicio-img {
       width: 100%;
       max-width: 300px;
@@ -76,78 +83,104 @@
 </head>
 <body>
 
-  <div id="seleccionRol">
-    <h2>Seleccione su rol</h2>
-    <button class="btn" style="background-color: #4CAF50;" onclick="seleccionarRol('adulto')">Adulto Mayor</button>
-    <button class="btn" style="background-color: #2196F3;" onclick="seleccionarRol('ayudante')">Ayudante</button>
+<div id="seleccionRol">
+  <a href="https://www.mediafire.com/file/oniycvpw0xnbd09/AdultTech.apk/file" target="_blank">
+  <img src="Imagenes_Web/25imagen.jpg" alt="Imagen con enlace" style="max-width:100%; height:auto; cursor:pointer;">
+</a>
+  <h2>Seleccione su rol</h2>
+  <button class="btn" style="background-color: #4CAF50;" onclick="seleccionarRol('adulto')">Adulto Mayor</button>
+  <button class="btn" style="background-color: #2196F3;" onclick="seleccionarRol('ayudante')">Ayudante</button>
+</div>
+
+<div id="textoAyudante" style="display:none;">
+  <h2>Guía de uso de la aplicación web</h2>
+  <div class="texto-largo">
+    <p>
+      Esta aplicación es una página web pensada para enseñar de forma clara y paso a paso cómo usar herramientas digitales básicas. Está dirigida a personas adultas mayores o a quienes no están familiarizados con la tecnología. No se necesita instalar nada si usas la web. Solo se abre desde un enlace usando el celular o un computador con internet, incluso si es antiguo.
+    </p>
+    <p>
+      Al abrir la página o app (si instalas desde Play Store o mediafire), lo primero que aparece son 2 botones donde debes elegir tu rol ya sea ayudante o adulto mayor. 
+      En caso de elegir ayudante se te mostrará este texto para que sepas el funcionamiento de la app y en caso de elegir adulto mayor se te mostrará un formulario a llenar donde se debe colocar nombre y edad. Luego de llenar esos datos, debes hacer clic en el botón que dice ingresar.
+    </p>
+    <p>
+      Después de entrar, se muestran tres botones grandes que representan las tres herramientas que se pueden aprender. WhatsApp, Correo Electrónico y Navegación Web.
+    </p>
+    <p>
+      Cada guía está escrita paso a paso y también tiene imágenes que ayudan a entender mejor. Además puedes escuchar las instrucciones en voz alta.
+    </p>
   </div>
-  <div id="textoAyudante" style="display:none;">
-    <h2>Guía de uso de la aplicación web</h2>
-    <div class="texto-largo">
-      <p>
-        Esta aplicación es una página web pensada para enseñar de forma clara y paso a paso cómo usar herramientas digitales básicas. Está dirigida a personas adultas mayores o a quienes no están familiarizados con la tecnología. No se necesita instalar nada si usas la web. Solo se abre desde un enlace usando el celular o un computador con internet, incluso si es antiguo.
-      </p>
-      <p>
-        Al abrir la página o app (si instalas desde Play Store o mediafire), lo primero que aparece es un pequeño formulario donde debes escribir tu Nombre y edad.debes hacer clic en el botón que dice ingresar.
-      </p>
-      <p>
-        Después de entrar, se muestran tres botones grandes que representan las tres herramientas que se pueden aprender. El primer botón es para aprender a usar WhatsApp. El segundo es para aprender a usar el correo electrónico. El tercero es para aprender a navegar por internet. Puedes hacer clic en cualquiera de ellos para comenzar.
-      </p>
-      <p>
-        Cada guía está escrita paso a paso y también tiene imágenes que ayudan a entender mejor. Por ejemplo, en la guía de WhatsApp se enseña cómo descargar la aplicación, cómo escribir un mensaje, cómo enviar fotos y cómo hacer llamadas o videollamadas. En la guía de correo se explica cómo crear una cuenta de correo, cómo escribir y enviar un mensaje. En la guía de navegación se muestra cómo usar Google para buscar cosas y cómo moverse dentro de una página.
-      </p>
-      <p>
-        Después de leer cada explicación, puedes hacer clic en un botón que lee en voz alta los pasos por si prefieres escuchar.
-      </p>
-      <p>
-        Esta aplicación funciona con internet básico y es compatible con celulares Android desde versiones antiguas como la 5.0, además de funcionar en computadores viejos. No requiere actualizaciones ni mantenimiento constante. Se creó con un diseño claro, letras grandes, colores definidos y botones simples para facilitar su uso.
-      </p>
-    </div>
-  </div>
+</div>
 
-  <div id="contenidoAdulto" style="display:none;">
+<div id="contenidoAdulto" style="display:none;">
 
-    <div id="loginForm">
-      <a href ="https://www.mediafire.com/file/ous15neqrah3l3t/AdultTech.apk/file"><img src="Imagenes_Web/25imagen.jpg" class="inicio-img"></a>
-      <h2>Acceso a la Guía Digital</h2>
-      <input type="text" id="nombre" placeholder="Nombre" style="padding:10px; font-size:18px; width:80%; max-width:300px; margin-bottom:10px;"><br>
-      <input type="number" id="edad" placeholder="Edad" style="padding:10px; font-size:18px; width:80%; max-width:300px; margin-bottom:10px;"><br>
-      <button class="btn" style="background-color: #444;" onclick="iniciarSesion()">Ingresar</button>
-    </div>
-
-    <div id="contenidoPrincipal" style="display: none;">
-      <h1>Guía para aprender a usar herramientas digitales básicas</h1>
-      <h3>Seleccione la aplicación que quiere aprender a usar:</h3>
-
-      <button id="whatsappBtn" class="btn">WhatsApp</button><br>
-      <button id="correoBtn" class="btn">Correo Electrónico</button><br>
-      <button id="navegacionBtn" class="btn">Navegación Web</button>
-
-      <div id="output"></div>
-      <button id="speakBtn">🔊 Escuchar</button>
-    </div>
-
+  <div id="loginForm">
+    <h2>Acceso a la Guía Digital</h2>
+    <input type="text" id="nombre" placeholder="Nombre" style="padding:10px; font-size:18px; width:80%; max-width:300px; margin-bottom:10px;"><br>
+    <input type="number" id="edad" placeholder="Edad" style="padding:10px; font-size:18px; width:80%; max-width:300px; margin-bottom:10px;"><br>
+    <button class="btn" style="background-color: #444;" onclick="iniciarSesion()">Ingresar</button>
   </div>
 
-  <script>
-    function seleccionarRol(rol) {
-      document.getElementById("seleccionRol").style.display = "none";
-      if (rol === "adulto") {
-        document.getElementById("contenidoAdulto").style.display = "block";
-      } else if (rol === "ayudante") {
-        document.getElementById("textoAyudante").style.display = "block";
+  <div id="contenidoPrincipal" style="display: none;">
+    <h1>Guía para aprender a usar herramientas digitales básicas</h1>
+    <h3>Seleccione la aplicación que quiere aprender a usar:</h3>
+
+    <button id="whatsappBtn" class="btn">WhatsApp</button><br>
+    <button id="correoBtn" class="btn">Correo Electrónico</button><br>
+    <button id="navegacionBtn" class="btn">Navegación Web</button>
+
+    <div id="output"></div>
+    <button id="speakBtn">🔊 Escuchar</button>
+    <button id="helpBtn">❓ Ayuda</button>
+
+    <div id="helpOptions">
+      <button id="help1" class="btn" style="background-color:#d9534f;">No sé cómo instalar la app o usar la web</button><br>
+      <button id="help2" class="btn" style="background-color:#f0ad4e;">Carga lenta o no se pudo instalar la app</button><br>
+      <button id="help3" class="btn" style="background-color:#5bc0de;">El enlace no funciona o no puedo iniciar sesión</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.onload = function() {
+    if (typeof Android !== "undefined") {
+      const userData = Android.getUserData();
+      if (userData) {
+        const [nombre, edad] = userData.split(";");
+        if (nombre && edad) {
+          document.getElementById("loginForm").style.display = "none";
+          document.getElementById("contenidoPrincipal").style.display = "block";
+        }
       }
     }
+  };
 
-    function iniciarSesion() {
-      document.getElementById("loginForm").style.display = "none";
-      document.getElementById("contenidoPrincipal").style.display = "block";
+  function seleccionarRol(rol) {
+    document.getElementById("seleccionRol").style.display = "none";
+    if (rol === "adulto") {
+      document.getElementById("contenidoAdulto").style.display = "block";
+    } else if (rol === "ayudante") {
+      document.getElementById("textoAyudante").style.display = "block";
+    }
+  }
+
+  function iniciarSesion() {
+    const nombre = document.getElementById("nombre").value;
+    const edad = document.getElementById("edad").value;
+
+    if (typeof Android !== "undefined") {
+      Android.saveUser(nombre, edad);
     }
 
-    const output = document.getElementById("output");
-    const speakBtn = document.getElementById("speakBtn");
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("contenidoPrincipal").style.display = "block";
+  }
 
-    const whatsappText = `
+  const output = document.getElementById("output");
+  const speakBtn = document.getElementById("speakBtn");
+  const helpBtn = document.getElementById("helpBtn");
+  const helpOptions = document.getElementById("helpOptions");
+
+ const whatsappText = `
       <h2>Guía para usar WhatsApp:</h2>
       <ol>
         <li>Abre la tienda de aplicaciones: "Play Store".</li>
@@ -228,28 +261,47 @@
         <li>Usa la flecha para volver.</li>
 <li>No ingreses tus datos en páginas raras. Evita dar clic en anuncios llamativos. Revisa que las páginas empiecen con “https” y que el sitio sea confiable.</li>
       </ol>`;
-    function mostrarTexto(html) {
-      output.innerHTML = html;
-      output.style.display = "block";
-      speakBtn.style.display = "inline-block";
-      const tempText = html.replace(/<[^>]*>?/gm, '');
-      speakBtn.onclick = () => {
-        const utterance = new SpeechSynthesisUtterance(tempText);
-        utterance.lang = 'es-ES';
-        window.speechSynthesis.cancel();
-        window.speechSynthesis.speak(utterance);
-      };
-    }
+  function mostrarTexto(html) {
+    output.innerHTML = html;
+    output.style.display = "block";
+    speakBtn.style.display = "inline-block";
+    helpBtn.style.display = "inline-block";
 
-    document.getElementById("whatsappBtn").addEventListener("click", () => {
-      mostrarTexto(whatsappText);
-    });
-    document.getElementById("correoBtn").addEventListener("click", () => {
-      mostrarTexto(correoText);
-    });
-    document.getElementById("navegacionBtn").addEventListener("click", () => {
-      mostrarTexto(navegacionText);
-    });
-  </script>
+    const tempText = html.replace(/<[^>]*>?/gm, '');
+    speakBtn.onclick = () => {
+      if (typeof Android !== 'undefined') {
+        Android.speak(tempText);
+      } else {
+        alert("Este index es para la app, no para la web");
+      }
+    };
+  }
+
+ 
+  helpBtn.onclick = () => {
+    helpOptions.style.display = helpOptions.style.display === "none" ? "block" : "none";
+  };
+
+  document.getElementById("help1").onclick = () => {
+    window.location.href = "mailto:ejemplo@gmail.com?subject=Ayuda%20Instalación%20o%20Uso&body=Hola,%20necesito%20ayuda%20porque%20no%20sé%20cómo%20instalar%20la%20app%20o%20usar%20la%20web.";
+  };
+  document.getElementById("help2").onclick = () => {
+    window.location.href = "mailto:ejemplo@gmail.com?subject=Carga%20Lenta%20o%20Error%20Instalación&body=Hola,%20tengo%20problemas%20porque%20la%20app%20carga%20lento%20o%20no%20se%20pudo%20instalar.";
+  };
+  document.getElementById("help3").onclick = () => {
+    alert("Si el enlace no funciona o no puede iniciar sesión, por favor llame al siguiente número de soporte: 📞 +56 9 1234 5678");
+  };
+
+
+  document.getElementById("whatsappBtn").addEventListener("click", () => {
+    mostrarTexto(whatsappText);
+  });
+  document.getElementById("correoBtn").addEventListener("click", () => {
+    mostrarTexto(correoText);
+  });
+  document.getElementById("navegacionBtn").addEventListener("click", () => {
+    mostrarTexto(navegacionText);
+  });
+</script>
 </body>
 </html>
